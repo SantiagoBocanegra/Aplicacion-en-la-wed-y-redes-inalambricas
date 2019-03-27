@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/cssPropios/estilos.css">
+    <link rel="stylesheet" href="css/cssPropios/formularioUsuario.css">
+    <link rel="stylesheet" href="css/icomoon/style.css">
+    <link rel="stylesheet" href="css/toastr.min.css">
+    <title>Ingresar Informacion</title>
+</head>
+
+<body onload="iniciar()">
+    <header>
+        <div class="jumbotron">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark Bnavegacion">
+                <a href="#" class="navbar-brand">D'ROCHA S.A</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#contenidoNavegacion"
+                    aria-controls="contenidoNavegacion" aria-expanded="false">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!--Contenido de navegacion-->
+                <div class="collapse navbar-collapse" id="contenidoNavegacion">
+                    <ul class="navbar-nav  ml-auto">
+                        <li class="nav-item dropdown">
+                            <img id="fotoU_nu" src="https://via.placeholder.com/100" alt="usuario" class="fotoUsuario">
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navDrop_nu" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Informacion Usuario
+                            </a>
+                            <!-- <div class="dropdown-menu" aria-labelledby="navDrop">
+                                <a href="#" class="dropdown-item">Cerrar</a>
+                                <div class="dropdown-divider"></div>
+                            </div> -->
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container">
+                <span class="icon-stack">BSC: D'ROCHA S.A</span>
+                <h6>Industria Farmaceutica</h6>
+            </div>
+        </div>
+    </header>
+    <section class="main container">
+        <!--OPCIONES DEL CONTENIDO-->
+        <div> 
+            <ol class="breadcrumb">
+                <li class="opciones_contenido"><button href="#" class="btn btn-primary" type="button"
+                        id="inf_empleados">Empleados</button></li>
+                <li class="opciones_contenido"><button href="#" class="btn btn-primary" type="button"
+                        id="inf_usuarios">Usuarios</button></li>
+            </ol>
+        </div>
+        <!--CONTENIDO DE LA PAGINA-->
+        <div id="contenido_pagina" class="row justify-content-md-center">
+            <!--CONTENIDO FORMULARIO EMPLEADO/TABLA USUARIO-->
+            <section class="posts col-md-5">
+                <!--FORMULARIO DE EMPLEADO-->
+                <form id="form_empleado_nu" action="" class="needs-validation" novalidate>
+                    <h2 class="titulo-seccion text-center">Informacion del Empleado</h2>
+                    <div class="form-row">
+                        <div id="divFoto_empleado">
+                            <a href="#" id="file-select" class="btn btn-primary">Elegir Archibo</a>
+                            <img class="img-thumbnail" id="foto_empleado" src="https://via.placeholder.com/200x150"
+                                alt="foto empleado">
+                        </div>
+                        <div class="col-md form-ground">
+                            <label for="cedula" class="col-form-label">Cedula</label>
+                            <input name="cedula" type="number" class="form-control form-control-sm" id="cedula_nu"
+                                title="Cedula del Empleado" placeholder="Cedula" value="" required>
+                            <div class="invalid-feedback">
+                                Campo Erroneo!
+                            </div>
+                            <div class="valid-feedback">
+                                Campo valido!
+                            </div>
+                            <label for="rol_empleado" class="col-form-label">Rol Empleado</label>
+                            <div class="form-ground">
+                                <select class="custom-select form-control-sm" name="rol_empleado" id="rol_empleado_nu"
+                                    required>
+                                    <option value="Financiero">Financiero</option>
+                                    <option value="Servicio al Cliente">Servicio al Cliente</option>
+                                    <option value="Investigacion y Desarrollo">Investigacion y desarrollo</option>
+                                    <option value="Gestion Humana">Gestion Humana</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Campo Erroneo!
+                                </div>
+                                <div class="valid-feedback">
+                                    Campo valido!
+                                </div>
+                            </div>
+                            <!--BOTONES BUSCAR EMPLEADO/ VER TODOS LOS EMPLEADOS -->
+                            <button type="button" class="btn btn-primary btn-lg" id="btn_buscar_nu"
+                                title="Buscar Empleado">
+                                <span class="icon-search">Buscar</span>
+                            </button>
+                            <button type="button" class="btn btn-primary btn-lg" id="btn_verEmpleados"
+                                title="Buscar Todos Los Empleado">
+                                <span class="icon-binoculars">Ver</span>
+                            </button>
+                        </div>
+                        <div class="form-row" style="width: 100%">
+                            <div class="col-md-6 form-ground">
+                                <label for="primer_nombre" class="col-form-label">Primer Nombre</label>
+                                <input type="text" class="form-control form-control-sm" id="primer_nombre_nu" name="primer_nombre"
+                                    title="Nombre Del Empleado" placeholder="Primer Nombre" required>
+                                <div class="invalid-feedback">
+                                    Campo Erroneo!
+                                </div>
+                                <div class="valid-feedback">
+                                    Campo valido!
+                                </div>
+                            </div>
+                            <div class="col-md-6 form-ground">
+                                <label for="segundo_nombre" class="col-form-label">Segundo Nombre</label>
+                                <input type="text" class="form-control form-control-sm" id="segundo_nombre_nu" name="segundo_nombre"
+                                    title="Segundo Nombre Del Empleado" placeholder="Segundo Nombre" required>
+                                <div class="invalid-feedback">
+                                    Campo Erroneo!
+                                </div>
+                                <div class="valid-feedback">
+                                    Campo valido!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" style="width: 100%">
+                            <div class="col-md-6 form-ground">
+                                <label for="apellido_paterno" class="col-form-label">Apellido paterno</label>
+                                <input type="text" class="form-control form-control-sm" id="apellido_paterno_nu" name="apellido_paterno"
+                                    title="Apellido Paterno Del Empleado" placeholder="Apellido Paterno" required>
+                                <div class="invalid-feedback">
+                                    Campo Erroneo!
+                                </div>
+                                <div class="valid-feedback">
+                                    Campo valido!
+                                </div>
+                            </div>
+                            <div class="col-md-6 form-ground">
+                                <label for="apellido_materno" class="col-form-label">Apellido Materno</label>
+                                <input type="text" class="form-control form-control-sm" id="apellido_materno_nu" name="apellido_materno"
+                                    title="Apellido Paterno Del Empleado" placeholder="Apellido Materno" required>
+                                <div class="invalid-feedback">
+                                    Campo Erroneo!
+                                </div>
+                                <div class="valid-feedback">
+                                    Campo valido!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" style="width: 100%">
+                            <div class="col-md-6 form-ground">
+                                <label for="telefono" class="col-form-label">Telefono</label>
+                                <input type="tel" class="form-control form-control-sm" id="telefono_nu" name="telefono"
+                                    title="Telefono Del Empleado" placeholder="Telefono" aria-describedby="tel_ayuda"
+                                    required>
+                                <samll id="tel_ayuda" class="text-muted">
+                                    Este campo solo recive numeros
+                                </samll>
+                                <div class="invalid-feedback">
+                                    Campo Erroneo!
+                                </div>
+                                <div class="valid-feedback">
+                                    Campo valido!
+                                </div>
+                            </div>
+                            <div class="col-md-6 form-ground">
+                                <label for="cargo_empleado" class="col-form-label">Cargo Empleado</label>
+                                <select class="custom-select form-control-sm" name="cargo_empleado"
+                                    id="cargo_empleado_nu" required>
+                                    <option value="Empleado">Empleado</option>
+                                    <option value="Jefe Area">Jefe Area</option>
+                                    <option value="Super Usuario">Super Usuario</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Campo Erroneo!
+                                </div>
+                                <div class="valid-feedback">
+                                    Campo valido!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md custom-fie">
+                            <input name="fotoEmpleado" type="file" class="form-control-file" id="foto">
+                        </div>
+                        <div class="col-md form-ground">
+                            <button type="button" class="btn btn-danger btn-lg" id="btn_eliminar_emp">
+                                <span class="icon-bin"></span>Eliminar</button>
+                            <button type="button" class="btn btn-primary btn-lg" id="btn_editar_emp">
+                                <span class="icon-pencil"></span>Editar</button>
+                        </div>
+                    </div>
+                </form>
+                <!--FORMULARIO DE USUARIO-->
+                <form id="form_usuario_nu" action="" class="needs-validation" novalidate>
+                    <h2 class="titulo-seccion text-center">Informacion del Usuario</h2>
+                    <div class="form-row">
+                        <div class="col-md form-ground">
+                            <label for="Usuario" class="col-form-label">Usuario</label>
+                            <input name="Usuario" type="text" maxlength="10" class="form-control form-control-sm" id="usuario_nu" placeholder="Usuario" aria-describedby="ayuda_usu" value="" required>
+                            <samll id="ayuda_usu" class="text-muted">
+                                longitud maxima 10 caracteres
+                            </samll>
+                            <div class="invalid-feedback">
+                                Campo Erroneo!
+                            </div>
+                            <div class="valid-feedback">
+                                Campo valido!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md form-ground">
+                            <label  for="contraseña" class="col-form-label">Contraseña
+                            </label>
+                            <input name="contraseña" type="password" class="form-control form-control-sm" id="contraseña" placeholder="Contraseña" value="" required>
+                            <div class="invalid-feedback">
+                                Campo Erroneo!
+                            </div>
+                            <div class="valid-feedback">
+                                Campo valido!
+                            </div>
+                            <label for="confimar_contraseña" class="col-form-label">Repetir contraseña</label>
+                            <input name="confirmarContraseña" type="password" class="form-control form-control-sm" id="confirmar_contraseña"
+                                placeholder="Confimar Contraseña" value="" required>
+                            <div class="invalid-feedback">
+                                Campo Erroneo!
+                            </div>
+                            <div class="valid-feedback">
+                                Campo valido!
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btn_usuario_form" form="ingresar_usuario" type="button"
+                        class="btn btn-primary btn-lg">Gurdar</button>
+                    <button id="btn_editar_user_form" form="ingresar_usuario" type="button"
+                        class="btn btn-primary btn-lg">Editar</button>
+                </form>
+            </section>
+            <!--CONTENIDO TABLA USUARIO/TABLA EMPLEADO-->
+            <section id="contenedor_dos" class="posts col-md-7">
+                <!--TABLA PARA EMPLEADOS-->
+                <table id="tabla_empleados_nu" class="table table-hover table-sm table-striped table-light">
+                    <caption>Lista de empleados</caption>
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Rol de empleado</th>
+                            <th scope="col">Primer nombre</th>
+                            <th scope="col">Apellido paterno</th>
+                            <th scope="col" colspan="2"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo_tabla_empleado">
+
+                    </tbody>
+                </table>
+                <!--TABLA USUARIO-->
+                <table id="tabla_usuarios_nu" class="table table-hover table-sm table-striped table-light">
+                    <caption>Lista de usuarios</caption>
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Cedula</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Usuario</th>
+                            <th scope="col" colspan="2"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyUsuario">
+                        <tr>
+                            <th scope="row">Cedula</th>
+                            <td>Nombre</td>
+                            <td>Usuario</td>
+                            <td>
+                                <button type="button" class="btn btn-primary button_tabla" title="Editar usuario">
+                                    <span class="icon-pencil"></span>
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger button_tabla" title="Eliminar usuario">
+                                    <span class="icon-bin"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </section>
+    
+   
+
+    <script src="js/jQuery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/toastr.min.js"></script>
+    <script src="js/funciones/empleados.js"></script>
+
+    <script>
+        let $btnEmpleado = $("#inf_empleados");
+        let $btnUsuario = $("#inf_usuarios");
+
+        $btnUsuario.on('click', () => {
+            $("#form_empleado_nu").hide();
+            $("#tabla_empleados_nu").hide();
+            $("#form_usuario_nu").show();
+            $("#tabla_usuarios_nu").show();
+        });
+
+        $btnEmpleado.on('click', () => {
+            $("#form_empleado_nu").show();
+            $("#tabla_empleados_nu").show();
+            $("#form_usuario_nu").hide();
+            $("#tabla_usuarios_nu").hide();
+        });
+ 
+        //MOSTRAR Y OCULTAR EL BOTON DE IMG
+        $("#divFoto_empleado").hover(
+            function () { //MOSTRAR BOTON
+                $(this).find('a').fadeIn();
+            }, function () { //OCULTAR BOTON
+                $(this).find('a').fadeOut();
+            });
+
+        //ABRIR LA VENTANA DE ARCHIVOS
+        $("#file-select").on('click', function (e) {
+            e.preventDefault();
+            $('#foto').click();
+        });
+
+        //PONER IMG
+        $("#foto").change(function () {
+            let reader = new FileReader();
+            reader.onload = function (e) {
+                $("#divFoto_empleado img").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        });
+    </script>
+</body>
+
+</html>

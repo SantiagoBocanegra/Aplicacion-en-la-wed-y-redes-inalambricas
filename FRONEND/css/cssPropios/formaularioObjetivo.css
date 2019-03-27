@@ -1,0 +1,100 @@
+#section_objetivos{
+    overflow: auto;
+}
+
+#form_objetivo{
+    padding: 5px 10px;
+    background-color: #464646;
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid white;
+    min-height: 103vh;
+}
+
+#form_objetivo input{
+    padding: 5px;
+    font-size: 18px;
+    color:white;
+    background-color: #9b9b9b;
+}
+
+#formFotoU{
+    width: 150px;
+}
+
+#formFotoU img{
+    background-color: #464646;
+}
+
+#form_objetivo label{
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+#form_objetivo button, #btnEditarFormObjetivos_ob, #btnCrearComponente{
+    margin-top: 15px;
+    margin-left: 10px;
+    float: right;
+}
+#btn_login{
+    margin-top: 20px;
+}
+/*CONTENEDOR DE OBJETIVOS*/
+#contenedor_objetivos, #filtroObjetivos, #informacionObjetivo, #btnEditarFormObjetivos_ob, #btnCrearComponente{
+    display: none;
+}
+.card-text{
+    margin-bottom: 5px;
+}
+.btn_cards{
+    width: 45%;
+    margin-right: 5px;
+    float: right;
+    margin-bottom: 2px;
+}
+
+.cuerpoObj{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.con_obj_header{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+/** carrucel */
+.carousel-caption span{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px){
+    #form_objetivo input{
+        padding: 5px;
+        font-size: 15px;
+        color:white;
+        background-color: #9b9b9b;
+    }
+    
+    #form_objetivo textarea{
+        width: 100%;
+    }
+    .card-text{
+        display: none;
+    }
+    .btn_cards{
+        width:  100%;
+        margin: 2px 0px;
+    }
+    .con_obj_header {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+     
+}

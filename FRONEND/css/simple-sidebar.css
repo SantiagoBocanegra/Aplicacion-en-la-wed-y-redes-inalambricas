@@ -1,0 +1,78 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+body {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+  background-color: #1C1C1C;
+  width: 1000px;
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  background-color: #464646; 
+  margin: 5px; 
+  padding: 5px;
+  border: 1px solid white;
+}
+
+#sidebar-wrapper .sidebar-heading label{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
+  color: white;
+  margin: 0;
+  margin-left: 40px;
+}
+
+#sidebar-wrapper .sidebar-heading button{
+  float: right;
+  border-radius: 50%;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+.contenedor_form{
+  border: 1px solid white;
+  margin: 5px;
+  min-height: 100vh;
+  background-color: #464646;
+}
+
+.contenedor_form #form_objetivo{
+  display: none;
+}
+
+.contenedor_form #form_empleado{
+  display: none;
+}
+
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -1000px;
+  }
+}

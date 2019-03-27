@@ -1,0 +1,63 @@
+.main{
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
+#barra_superior{
+    padding-right: 11%;
+}
+
+.jumbotron{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    background: #1C1C1C;
+    padding: 30px;
+    padding-bottom: 5px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.jumbotron h1{
+    margin-bottom: 0px;
+}
+
+.jumbotron p{
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.fotoUsuario{
+    margin: 0px;
+    padding: 2px 0px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+img #fotoU {
+    vertical-align: middle;
+    border-style: none;
+    width: 50px;
+    height: 50px;
+}
+
+
+.navbar{
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0px 20px;
+    min-height: 35px;
+}
+
+footer{
+    font-size: 15px;
+    width: 100%;
+    clear: both;
+    background: #1C1C1C;
+    color: white;
+}
+
+header .jumbotron{
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}

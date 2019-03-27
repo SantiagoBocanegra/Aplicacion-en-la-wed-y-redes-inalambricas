@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/simple-sidebar.css">
+    <!--ESTILOS GENERAL-->
+    <link rel="stylesheet" href="css/cssPropios/estilos.css">
+    <!--ESTILOS PAGINA PRINCIPAL-->
+    <link rel="stylesheet" href="css/cssPropios/index.css">
+    <!--ESTILO FORMULARIO NUEVO EMPLEADO-->
+    <link rel="stylesheet" href="css/cssPropios/formularioEmpleado.css">
+    <!--ESTILOS LOGIN-->
+    <link rel="stylesheet" href="css/cssPropios/login.css">
+    <link rel="stylesheet" href="css/icomoon/style.css">
+    <!--ESTILOS DE ALERTAS-->
+    <link rel="stylesheet" href="css/toastr.min.css">
+
+    <!--ESTILOS FORMULARIOS-->
+    <link rel="stylesheet" href="css/cssPropios/formaularioObjetivo.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="toggled d-flex" id="wrapper">
+        <!-- Sidebar FORMULARIOS -->
+        <div class="border-right" id="sidebar-wrapper">
+            <div class="contenedor_header sidebar-heading">
+                <label id="tipo_formulario" for="">FORMULARIO</label>
+                <button type="button" class="btn btn-danger" id="btnCerrar"><span class="icon-cross"></span></button>
+            </div>
+            <!--CONTENEDOR DE FORMULARIOS DE OBJETIVO Y EMPLEADOS-->
+            <div class="contenedor_form">
+                <!--FORMULARIO OBJETIVO-->
+                <form id="form_objetivo" action="" class="needs-validation" novalidate>
+                    <div class="form-row">
+                        <div id="formFotoU" class="col-md-5">
+                            <img class="img-thumbnail" style="width: 100%; height: 100%;" id="fotoObjUser"
+                                src="https://via.placeholder.com/150" alt="usuario">
+                        </div>
+                        <div class="col-md-7">
+                            <label for="objetivo" class="col-form-label">Objetivo</label>
+                            <input name="objetivo" type="text" class="form-control form-control-sm text-center"
+                                id="objetivo" placeholder="objetivo" value="" required>
+                            <div class="invalid-feedback">
+                                Campo Erroneo!
+                            </div>
+                            <label for="indicadores" class="col-form-label">Indicadore</label>
+                            <input name="indicadores" class="form-control form-control-sm" id="indicadores"
+                                placeholder="Indicadores" value="" required>
+                            <div class="invalid-feedback">
+                                Campo Erroneo
+                            </div>
+                            <hr border="solid" width="90%" color="black">
+                            <hr border="solid" width="95%" color="black">
+                            <hr border="solid" width="100%" color="black">
+                            <hr border="solid" width="95%" color="black">
+                            <hr border="solid" width="90%" color="black">
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class=" col-md-10">
+                            <label for="metas" class="col-form-label">Meta</label>
+                            <input name="metas" id="metas" class="form-control form-control-sm"
+                                placeholder="Metas" value="" required>
+                            <div class="invalid-feedback">
+                                Campo Erroneo
+                            </div>
+
+                            <label for="iniciativas" class="col-form-label">Iniciativa</label>
+                            <input name="iniciativas" id="iniciativas" class="form-control form-control-sm"
+                                placeholder="Iniciativas" value="" required>
+                            <div class="invalid-feedback">
+                                Campo Erroneo
+                            </div>
+                        </div>
+                    </div>
+                    <button id="btnFormularioObjetivos" class="btn btn-primary btn-lg" type="button"><span
+                            class="icon-compass"></span> Guardar</button>
+                </form>
+                <!--FORMULARIO EMPLEADO-->
+                <form id="form_empleado" action="" enctype="multipart/form-data" class="needs-validation" novalidate>
+                    <div class="form-row">
+
+                        <div id="foto_empleado" class="form-group text-center thumb">
+                            <a href="#" id="file-select" class="btn btn-primary ">Elegir Archibo</a>
+                            <img id="imgFotoE" style="padding: 0; width: 100%; height: 100%;" class="img-thumbnail"
+                                src="https://via.placeholder.com/200x150" alt="foto empleado">
+                        </div>
+
+                        <div style="padding-top: 5px;" class="col-md form-ground">
+                            <label for="cedula" class="col-form-label">Cedula</label>
+                            <input name="cedula" type="number" class="form-control form-control-sm" id="cedula"
+                                placeholder="Cedula" value="" required>
+                            <div class="invalid-feedback">
+                                Campo Erroneo!
+                            </div>
+                            <div class="valid-feedback">
+                                Campo valido!
+                            </div>
+                            <label for="rol_empleado" class="col-form-label">Rol Empleado</label>
+                            <div class="form-ground">
+                                <select class="custom-select form-control-sm" name="rol_empleado" id="rol_empleado"
+                                    required>
+                                    <option value="Financiero">Financiero</option>
+                                    <option value="servicio al cliente">Servicio al cliente</option>
+                                    <option value="Investigacion y Desarrollo">Investigacion y desarrollo</option>
+                                    <option value="Gestion Humana">gestion Humana</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Campo Erroneo!
+                                </div>
+                                <div class="valid-feedback">
+                                    Campo valido!
+                                </div>
+                            </div>
+                            <label style="padding: 5px; margin-top: 7px; display: block" class="alert alert-info"
+                                id="file-info">No hay archivo</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md form-ground">
+                            <label for="primer_nombre" class="col-form-label">Primer Nombre</label>
+                            <input name="primer_nombre" type="text" class="form-control form-control-sm"
+                                id="primer_nombre" placeholder="Primer Nombre" required>
+                            <div class="invalid-feedback">
+                                Campo Erroneo!
+                            </div>
+                            <div class="valid-feedback">
+                                Campo valido!
+                            </div>
+                        </div>
+                        <div class="col-md form-ground">
+                            <label for="segundo_nombre" class="col-form-label">Segundo Nombre</label>
+                            <input name="segundo_nombre" type="text" class="form-control form-control-sm"
+                                id="segundo_nombre" placeholder="Segundo Nombre" required>
+                            <div class="invalid-feedback">
+                                Campo Erroneo!
+                            </div>
+                            <div class="valid-feedback">
+                                Campo valido!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md form-ground">
+                            <label for="apellido_paterno" class="col-form-label">Apellido paterno</label>
+                            <input name="apellido_paterno" type="text" class="form-control form-control-sm"
+                                id="apellido_paterno" placeholder="Apellido Paterno" required>
+                            <div class="invalid-feedback">
+                                Campo Erroneo!
+                            </div>
+                            <div class="valid-feedback">
+                                Campo valido!
+                            </div>
+                        </div>
+                        <div class="col-md form-ground">
+                            <label for="apellido_materno" class="col-form-label">Apellido Materno</label>
+                            <input name="apellido_materno" type="text" class="form-control form-control-sm"
+                                id="apellido_materno" placeholder="Apellido Materno" required>
+                            <div class="invalid-feedback">
+                                Campo Erroneo!
+                            </div>
+                            <div class="valid-feedback">
+                                Campo valido!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 form-ground">
+                            <label for="telefono" class="col-form-label">Telefono</label>
+                            <input name="telefono" type="tel" class="form-control form-control-sm" id="telefono"
+                                placeholder="Telefono" aria-describedby="tel_ayuda" required>
+                            <samll id="tel_ayuda" class="text-muted">
+                                Este campo solo recive numeros
+                            </samll>
+                            <div class="invalid-feedback">
+                                Campo Erroneo!
+                            </div>
+                            <div class="valid-feedback">
+                                Campo valido!
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-ground">
+                            <label for="cargo_empleado" class="col-form-label">Cargo Empleado</label>
+                            <select class="custom-select form-control-sm" name="cargo_empleado" id="cargo_empleado"
+                                required>
+                                <option value="Empleado">Empleado</option>
+                                <option value="Jefe Area">Jefe Area</option>
+                                <option value="Super Usuario">Super Usuario</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Campo Erroneo!
+                            </div>
+                            <div class="valid-feedback">
+                                Campo valido!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md custom-fie">
+                        <input name="fotoEmpleado" type="file" class="form-control-file" id="foto">
+                        <button type="button" class="btn btn-primary btn-lg" id="btn_empleado"><span
+                                class="icon-compass"></span>Gurdar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="page-content-wrapper">
+            <!--HEADER DEL DOCUMENTO-->
+            <header>
+                <div class="jumbotron">
+                    <nav id="barra_superior" class="navbar navbar-expand-lg navbar-dark bg-dark Bnavegacion">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#contenidoNavegacion" aria-controls="contenidoNavegacion"
+                            aria-expanded="false">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <!--Contenido de navegacion-->
+                        <div class="collapse navbar-collapse" id="contenidoNavegacion">
+                            <a id="Inicio" href="#" class="navbar-brand">D'ROCHA S.A</a>
+                            <ul class="navbar-nav  ml-auto" id="infoUseAct">
+                                <li class="nav-item dropdown">
+                                    <img id="fotoU" src="https://via.placeholder.com/100" alt="usuario"
+                                        class="fotoUsuario">
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" id="navDrop" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Informacion Usuario
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navDrop">
+                                        <a href="#" class="dropdown-item">Cerrar</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="container">
+                        <span class="icon-stack">BSC: D'ROCHA S.A</span>
+                        <h6>Industria Farmaceutica</h6>
+                    </div>
+                </div>
+            </header>
+            <section class="main container">
+                <!--FORMULARIO LOGIN-->
+                <div id="menu_login" class="row justify-content-md-center">
+                    <section class="posts col-md-9">
+                        <form id="formulario_login" action="" class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <div class="col-md-4" id="divFotoU">
+                                    <img class="img-thumbnail" src="\img\D25M3A2019H23MN16S18ML690C1.png" alt="usuario"
+                                    style=" width: 250px; height: 250px;" id="foto_empleado_index">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="col">
+                                        <label for="usuario">Usuario</label>
+                                        <input type="text" class="form-control" id="usuario" placeholder="Usuario"
+                                            value="" required>
+                                        <div class="invalid-feedback">
+                                            Campor Erroneo!
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="Contraseña">contraseña</label>
+                                        <input type="password" class="form-control" id="contraseña"
+                                            placeholder="Contraseña" value="" required>
+                                        <div class="invalid-feedback">
+                                            Campor Erroneo!
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <a href="#" id="btn_login" class="btn btn-primary" type="button">Ingresar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+                <!--PAGINA PRINCIPAL-->
+                <div id="menu_principal">
+                    <!--MIGAS DE PAN-->
+                    <nav aria-label="breadcrumb">
+                        <ol id="lista_migas" class="breadcrumb">
+                            <li class="breadcrumb-item active" aria-current="page">Inicio</li>
+                        </ol>
+                    </nav>
+                    <!--OBJETIVOS-->
+                    <div class="row justify-content-md-center">
+                        <section id="section_objetivos" class="posts col-md">
+                            <!--OBJETIVOS-->
+                            <div id="cuerpoObj">
+
+                            </div>
+                            <!--MOSTRAR TODOS LOS OBJETIVOS-->
+                            <select class="custom-select" id="filtroObjetivos">
+                                <option selected>Filtros</option>
+                                <option value="Financiero">Financiero</option>
+                                <option value="Servicio al cliente">Servicio al cliente</option>
+                                <option value="Investigacion y Desarrollo">Investigacion y Desarrollo</option>
+                                <option value="Gestion Humana">Gestion Humana</option>
+                            </select>
+                            <div id="contenedor_objetivos" class="container-fluid">
+                                <div id="cuerpoObj" class="container-fluid row cuerpoObj">
+                                    <div class="col-sm-4">
+                                        <div class="card text-center">
+                                            <img style="height: 120px; width: 100;" class="card-img-top" src="https://via.placeholder.com/100x180" alt="Foto del creador del objetivo">
+                                            <div class="card-body" style="padding: 2px 4px;">
+                                                <h5 class="card-title con_obj_header">
+                                                    <a href="#">Objetivo</a>
+                                                </h5>
+                                                <p class="card-text">
+                                                    <!--FECHA DE CREACION DE OBJETIVO-->
+                                                    <span class="post-info">Fecha:</span>
+                                                    <br />
+                                                    <!--AUTOR DEL OBJETIVO-->
+                                                    <span class="post-info">Autor:</span>
+                                                    <br />
+                                                </p>
+                                                <a href="#" class="btn btn-primary btn_cards" type="button">Editar</a>
+                                                <a href="#" class="btn btn-danger btn_cards" type="button">Borrar </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- INFORMACION DE UN OBJETIVO-->
+                            <div class="main container" id ="informacionObjetivo">
+                                    <div class="row">
+                                            <!-- FORMULARIO OBJETIVOS -->
+                                        <div class="col-md-5">
+                                            <form id="objetivos_form_obj" action="" class="needs-validation" novalidate>
+                                                <div class="form-row">
+                                                    <div class="col-md-6" id="foto_obj">
+                                                        <img class="img-thumbnail" style="width: 100%; height: 90%;" id="formObjUser"
+                                                            src="https://via.placeholder.com/150" alt="usuario">
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="objetivo" class="col-form-label">Objetivo</label>
+                                                        <input name="objetivo" type="text" class="form-control form-control-sm text-center"
+                                                            id="objetivo_ob" placeholder="objetivo" value="" required>
+                                                        <div class="invalid-feedback">
+                                                            Campo Erroneo!
+                                                        </div>
+                                                        <label for="indicadores" class="col-form-label">Indicadore</label>
+                                                        <input name="indicadores" class="form-control form-control-sm" id="indicadores_ob"
+                                                            placeholder="Indicadores" value="" required>
+                                                        <div class="invalid-feedback">
+                                                            Campo Erroneo
+                                                        </div>
+                                                        <hr border="solid" width="90%" color="black">
+                                                        <hr border="solid" width="95%" color="black">
+                                                        <hr border="solid" width="100%" color="black">
+                                                        <hr border="solid" width="95%" color="black">
+                                                        <hr border="solid" width="90%" color="black">
+                                                    </div>
+                                                    <div class="col-md-1"></div>
+                                                    <div class=" col-md-10">
+                                                        <label for="metas" class="col-form-label">Meta</label>
+                                                        <input name="metas" id="metas_ob" class="form-control form-control-sm" placeholder="Metas"
+                                                            value="" required>
+                                                        <div class="invalid-feedback">
+                                                            Campo Erroneo
+                                                        </div>
+                            
+                                                        <label for="iniciativas" class="col-form-label">Iniciativa</label>
+                                                        <input name="iniciativas" id="iniciativas_ob" class="form-control form-control-sm"
+                                                            placeholder="Iniciativas" value="" required>
+                                                        <div class="invalid-feedback">
+                                                            Campo Erroneo
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button id="btnCrearComponente" class="btn btn-primary btn-lg" type="button"><span
+                                                    class="icon-plus"></span>Agregar</button>
+
+                                                <button id="btnEditarFormObjetivos_ob" class="btn btn-primary btn-lg" type="button"><span
+                                                    class="icon-pencil"></span>Editar</button>
+                                            </form>
+                                        </div>
+                                        <!--TABLA PARA OBJETIVOS-->
+                                        <div class="col-md-7">
+                                            <table id="objetivo_tabla_obj" class="table table-hover table-sm table-striped table-light">
+                                                <caption id="objetivo_identificador">Lista de Objetivos</caption>
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">Fecha</th>
+                                                        <th scope="col">Indicadores</th>
+                                                        <th scope="col">Metas</th>
+                                                        <th scope="col">Iniciativas</th>
+                                                        <th scope="col" colspan="2"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="objetivo_body_obj">
+                            
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                            </div>
+                        </section>
+                        <!--BARRA IZQUIERDA OPCIONES E INFORMACION DEL BSC-->
+                        <aside class="cold_md-3 hidden-xs hidden-sm">
+                            <h4>D'ROCHA S.A</h4>
+                            <!--OPCIONES DE BSC-->
+                            <div class="list-group">
+                                <a href="#" id="objetivo-toggle" class="list-group-item">
+                                    <span class="icon-file-text"></span>Ingresar Objetivo
+                                </a>
+                                <a href="#" id="ver_objetivos" class="list-group-item">
+                                    <span class="icon-binoculars"></span>Ver Objetivo
+                                </a>
+                                <a href="#" id="empleado-toggle" class="list-group-item">
+                                    <span class="icon-user-plus"></span>Registrar Empleado
+                                </a>
+                                <a href="nuevo_usuario.html" target="black" id="ver_informacion"
+                                    class="list-group-item">
+                                    <span class="icon-binoculars"></span>Informacion
+                                </a>
+                            </div>
+                            <!--COLUMNAS OBJETIVOS RECIENTES-->
+                            <h4>Modificaciones Recientes</h4>
+                            <div id="divInformacion">
+                                
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <p class="text-left">copyRight: Santiago Bocanegra 1664143</p>
+                </div>
+
+            </div>
+            <div class="col-xs-6 text-right">
+                <ul class="list-inline ">
+                    <li class="list-inline-item"><a href="#">
+                            <h6>Registrarse</h6>
+                        </a></li>
+                    <li class="list-inline-item"><a href="#">
+                            <h6>Contactanos</h6>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </footer> -->
+
+    <script src="js/jQuery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/toastr.min.js"></script>
+    <script src="js/funciones.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/funciones/objetivos.js"></script>
+    <script src="js/funciones/empleados.js"></script>
+    <!-- <script src="js/funciones/login.js"></script> -->
+
+    <script>
+        //MIGAS DE PAN
+        let $lista_migas = $("#lista_migas");
+
+        //FORMULARIOS
+        let $form_empleado = $("#form_empleado");
+        let $form_objetico = $("#form_objetivo");
+
+        let $contenedor_objetivos = $("#contenedor_objetivos");
+        let $cuerpoArticulos = $("#cuerpoObj"); 
+        var $informacionObj = $('#informacionObjetivo');
+
+        //LABEL DEL NOMBRE DEL TIPO DE FORMULARIO
+        let $tipo_formulario = $("#tipo_formulario");
+
+        //MENU DE OPCIONES
+        let $objetivo_toggle = $("#objetivo-toggle");
+        let $empleado_toggle = $("#empleado-toggle");
+        let $ver_objetivos = $("#ver_objetivos");
+
+        function f_toggled(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        }
+
+        function migas(entrada) {
+            $lista_migas.append(entrada);
+        }
+        //ACTUALIZAR EL TITULO DEL FORMULARIO DE LA VENTANA DESPLEGLABLE
+        $objetivo_toggle.click(e => {
+            $tipo_formulario.html('<span class="icon-file-text"></span>Nuevo Objetivo');
+            $form_objetico.show();
+            f_toggled(e);
+            $("aside").hide();
+        });
+        //ACTUALIZAR EL TITULO DEL FORMULARIO DE LA VENTANA DESPLEGLABLE
+        $empleado_toggle.click(e => {
+            $tipo_formulario.html('<span class="icon-user-plus">Nuevo Empleado');
+            $form_empleado.show();
+            f_toggled(e);
+            $("aside").hide();
+        });
+        //VER TODOS LOS OBJETIVOS
+        $ver_objetivos.click(e => {
+            e.preventDefault();
+            $cuerpoArticulos.hide();
+            $contenedor_objetivos.show();
+            $('#filtroObjetivos').show();
+            migas('<li class="breadcrumb-item active" aria-current="page">Ver objetivos</li>');
+        });
+        //BTN CERRAR DE LA VENTANA DESPLEGABLE
+        $("#btnCerrar").click(e => {
+            f_toggled(e);
+            $form_empleado.hide();
+            $form_objetico.hide();
+            $("aside").show();
+        });
+
+        $('#Inicio').click(e => {
+            e.preventDefault();
+            $cuerpoArticulos.show();
+            $informacionObj.hide();
+            $("aside").show();
+            $contenedor_objetivos.hide();
+            $('#filtroObjetivos').hide();
+            $lista_migas.html('<li class="breadcrumb-item active" aria-current="page">Inicio</li>');
+
+        });
+    </script>
+    <!--FOTO DEL EMPLEADO-->
+    <script>
+        //MOSTRAR Y OCULTAR EL BOTON DE IMG
+        $("#foto_empleado").hover(
+            function () { //MOSTRAR BOTON
+                $(this).find('a').fadeIn();
+            }, function () { //OCULTAR BOTON
+                $(this).find('a').fadeOut();
+            });
+
+        //ABRIR LA VENTANA DE ARCHIVOS
+        $("#file-select").on('click', function (e) {
+            e.preventDefault();
+            $('#foto').click();
+        });
+
+        //PONER IMG
+        $("#foto").change(function () {
+            let file = (this.files[0].name).toString();
+            let reader = new FileReader();
+            $("#file-info").text("");
+            $("#file-info").text(file);
+            reader.onload = function (e) {
+                $("#foto_empleado img").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+#form_empleado{
+    padding: 5px 10px;
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid white;
+    min-height: 108vh;  
+} 
+
+#form_empleado label{
+    margin-bottom: 5px;
+}
+
+#form_empleado select{
+    height: 31px;
+    color: black;
+    padding: 5px;
+    font-size: 15px;
+    background-color: #9b9b9b;
+}
+
+#form_empleado input:not(#foto){
+    padding: 5px;
+    font-size: 20px;
+    color:white;
+    background-color: #9b9b9b;
+}
+
+#foto_empleado{
+    width: 200px;
+    height: 220px;
+    margin-bottom: 5px;
+    border: 1px solid;
+    position: relative;
+}
+
+#foto_empleado a{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    display: none;
+}
+
+#btn_empleado{
+    float: right;
+    margin-bottom: 5px;
+    padding-bottom: 5px; 
+}
+
+#foto{
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    z-index: -99999;
+}
+#telefono {
+    clear: both;
+}
+
+
+@media screen and (max-width: 768px){
+    
+}
+
+

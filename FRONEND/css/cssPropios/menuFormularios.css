@@ -1,0 +1,45 @@
+#opciones_menu{
+    width: 100px;
+    background:  #1C1C1C;
+    padding: 0 10px;
+}
+
+#opciones_menu ul{
+    list-style-type: none;
+    text-align: center;
+    padding: 5px;
+    margin: 0px;
+}
+#opciones_menu ul a{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    transition: all 100ms;
+    font-weight: 100;
+}
+#opciones_menu li{
+    list-style: none;
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#opciones_menu li span{
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+#opciones_menu li a:hover{
+    color: blue;
+}
+
+@media screen and (max-width: 768px){
+    #foto_empleado {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    #divFoto_empleado {
+        position: relative;
+        width: 100%;
+    }
+}

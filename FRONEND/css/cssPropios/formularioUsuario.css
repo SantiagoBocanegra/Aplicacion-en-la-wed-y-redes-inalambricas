@@ -1,0 +1,61 @@
+#form_usuario_nu, #btn_editar_emp, #btn_eliminar_emp{
+    display: none;
+}
+
+#btn_usuario_form, #tabla_usuarios_nu, #btn_editar_user_form{
+    display: none;
+}
+
+.opciones_contenido{
+    padding-right: 10px;
+}
+
+#inf_empleados, #inf_usuarios{
+    border-radius: 40px;
+}
+
+#tabla_empleados_nu{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.button_tabla{
+    border-radius: 20px;
+}
+
+#foto_empleado{
+    width: 200px;
+    height: 100%;
+    border-radius: 20px;
+}
+#divFoto_empleado{
+    margin-bottom: 5px;
+    position: relative;
+}
+
+#divFoto_empleado a{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    display: none;
+}
+#foto{
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+    z-index: -99999;
+}
+#btn_buscar_nu, #btn_usuario_form, #btn_verEmpleados, #btn_editar_user_form{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    float: right;
+    border-radius: 45px;
+}
+
+#btn_editar_emp, #btn_eliminar_emp{
+    float: right;
+    margin-right: 5px;
+    border-radius: 45px;
+}
